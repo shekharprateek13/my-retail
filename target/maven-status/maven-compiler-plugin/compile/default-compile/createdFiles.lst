@@ -1,0 +1,8 @@
+my\retail\model\Item.class
+my\retail\model\ProductMap.class
+my\retail\service\ProductService.class
+my\retail\MyRetailApplication.class
+my\retail\repository\ProductRepository.class
+my\retail\model\Product.class
+my\retail\controller\ProductController.class
+my\retail\controller\GlobalExceptionHandlerController.class
