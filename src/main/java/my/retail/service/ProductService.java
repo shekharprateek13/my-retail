@@ -52,11 +52,13 @@ public class ProductService {
 		Product product = new Product();
 		product.setId(id);
 
-		ProductMap productMap = this.getProductDetailsFromExternalAPI(id);
-		Item item = productMap.getProduct().get("item");
-		product.setName(item.getProduct_description().get("title").toString());
+//		ProductMap productMap = this.getProductDetailsFromExternalAPI(id);
+//		Item item = productMap.getProduct().get("item");
+//		product.setName(item.getProduct_description().get("title").toString());
 
 		Product temp = repository.findById(Integer.parseInt(id.toString()));
+		product.setName(temp.getName());
+		temp.setName(temp.getName());
 		product.setCurrent_price(temp.getCurrent_price());
 
 		return product;
