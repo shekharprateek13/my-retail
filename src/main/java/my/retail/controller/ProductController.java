@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import my.retail.model.Product;
@@ -31,8 +30,7 @@ public class ProductController {
 	@Autowired
 	ProductService productService;
 	
-	@GetMapping("/ids")
-	@ResponseBody
+	@GetMapping(value="/ids",produces={MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
 	public List<Product> getProductList(@RequestParam("ids") Integer[] ids){
 		logger.info("Recieved Get Request for Ids: "+Arrays.asList(ids));
 		return productService.getProductList(ids);
@@ -44,7 +42,8 @@ public class ProductController {
 	 * @param id: used to fetch data from the External API as well as MongoDB
 	 * @return: An instance of Product where Name is fetched from External API and Current Price from MongoDB.
 	 */
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/{id}", method = RequestMethod.GET, 
+			produces={MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
 	public Product getProduct(@PathVariable("id") Integer id){
 		logger.info("Recieved Get Request for Id: "+id);
 		return productService.getProduct(id);

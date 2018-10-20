@@ -1,9 +1,5 @@
-my/retail/controller/ProductController.class
-my/retail/repository/ProductRepository.class
-my/retail/MyRetailApplication.class
-my/retail/config/SecurityConfig.class
-my/retail/model/Item.class
-my/retail/service/ProductService.class
-my/retail/model/Product.class
-my/retail/model/ProductMap.class
-my/retail/controller/GlobalExceptionHandlerController.class
+my\retail\model\Product.class
+my\retail\model\Item.class
+my\retail\model\ProductMap.class
+my\retail\service\ProductService.class
+my\retail\repository\ProductRepository.class
